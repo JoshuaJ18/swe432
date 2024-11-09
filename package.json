@@ -1,0 +1,24 @@
+{
+  "name": "swe432",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mainScript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaJ18/swe432.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshuaJ18/swe432/issues"
+  },
+  "homepage": "https://github.com/JoshuaJ18/swe432#readme",
+  "dependencies": {
+    "express": "^4.21.1",
+    "swe432": "file:"
+  }
+}

@@ -4,76 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GirlyPops</title>
-    
-    <style>
-        .all {
-            display: flex;
-            justify-content: space-between; 
-            align-items: flex-start; 
-        }
-        .header-content {
-            display: flex;
-            position: relative;
-            background-color: #c8c7d7;
-            justify-content: center;
-            align-items: center;
-            max-height: 30vh;
-        }
-
-        .left-bar {
-            height: 100%;
-            min-width: 20%;
-            min-height: 100vh;
-            top: 30vh;
-            left: 0;
-            background-color: #c8c7d7;
-        }
-        
-        .calendar {
-        }
-        
-        .search{
-            padding-top: 30vh;
-            left: 0;
-        }
-
-        .playlist-management {
-            min-width: 60%;
-            min-height: 30vh;
-            max-height: 30vh;
-            margin-top: 20vh;
-            background-color: #d8e2eb;
-
-        }
-
-        .song-search {
-            margin-top: 40vh;
-        }
-
-        .search {
-            align-items: left;
-            justify-content: left;
-        }
-
-        .songs {
-        }
-
-        .right-bar {
-            min-width: 20%;
-            min-height: 100vh;
-            align-content: right;
-            justify-content: right;
-            right: 0;
-            background-color: #c8c7d7;
-        }
-
-        .play-manage {
-            position: absolute;
-            margin-left: 40vw;
-        }
-
-    </style>
 </head>
+<style>
+    .all {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; 
+}
+.header-content {
+    display: flex;
+    position: relative;
+    background-color: #c8c7d7;
+    justify-content: center;
+    align-items: center;
+    max-height: 30vh;
+}
+
+.left-bar {
+    height: 100%;
+    min-width: 20%;
+    min-height: 100vh;
+    top: 30vh;
+    left: 0;
+    background-color: #c8c7d7;
+}
+
+.search{
+    padding-top: 30vh;
+    left: 0;
+}
+
+.playlist-management {
+    min-width: 60%;
+    min-height: 30vh;
+    max-height: 30vh;
+    margin-top: 20vh;
+    background-color: #d8e2eb;
+
+}
+
+.song-search {
+    margin-top: 40vh;
+    margin-left: 5%
+}
+
+.search {
+    align-items: left;
+    justify-content: left;
+}
+
+.songs-list{
+    background-color: #C8C7D7;
+    width: 90%;
+}
+
+.songs-list li {
+    list-style: none;
+    display: inline-flex;
+    min-width: 10vw;
+    min-height: 15vh;
+    margin-right: 2vw;
+    background-color: white;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.songs-list button {
+    width: 100%;
+}
+
+.right-bar {
+    min-width: 20%;
+    min-height: 100vh;
+    align-content: right;
+    justify-content: right;
+    right: 0;
+    background-color: #c8c7d7;
+}
+
+.play-manage {
+    position: absolute;
+    margin-left: 40vw;
+}
+
+.playlist li {
+    list-style: none;
+    background-color: #8897AA;
+    height: 5vh;
+    margin-bottom: -1vh;
+    width: 95%;
+}
+
+.current-playlist {
+    margin-left: 2.5%;
+}
+
+.user-list li {
+    list-style: none;
+}
+
+</style>
+
 <body>
     <header>
         <div class="header-content">
@@ -91,39 +122,36 @@
                 <div class="search">
                     <p>Search for a user</p>
                     <input type="search"></input>
-                    <h1>User</h1>
-                    <h1>User</h1>
+                    <div class="users">
+                        <ul class="user-list" id="user-list">
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="playlist-management">
-                <div class="playlist">
-                    <div class="current-playlist">
-                        <input type="checkbox">Playlist dropdown placeholder</input>
-                        <p>Song</p>
-                        <p>Song</p>
-                        <p>Song</p>
-                    </div>
+            <div class="playlist-management" id="playlist-management">
+                <div class="playlist" id="playlist">
+                    <form class="current-playlist" onsubmit="playlistSubmit()">
+                        <select id="dropdown">Playlist</select>
+                        <ul id="playlist-list">
+                        </ul>
+                        <button>create playlist</button>
+                    </form>
                 </div>
                 <div class="song-search">
                     <p>Search for a song</p>
                     <input type="search"></input>
-                    <div class="songs">
-                        <div class="song">song</div>                   
-                        <div class="song">song</div>
-                    </div>
+                    <ul class="songs-list" id="songs-list">
+                    </ul>
                 </div>
             </div>
     
             <div class="right-bar">
-                <div>
-                    <p>User image placeholder</p>
-                    <p>blurb about user's account</p>
-                    <p>blurb</p>
-                </div>
+                <div class="user-info" id="user-info"></div>
             </div>
         </div>
     </main>
     
+    <script type="module" src="./mainScript.js"></script>
 </body>
 </html>
