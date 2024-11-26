@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 var session = require('express-session');
 const MongoStore = require('connect-mongo');
+require('dotenv').config();
 
 const app = express();
-
-mongoose.connect("mongodb+srv://user:DQl4VhVGwmXTH2zK@swe432.hafol.mongodb.net/");
+const mongoURI = process.env.API_URL;
+mongoose.connect(mongoURI);
 
 const SongModel = require('./models/song');
 const PlaylistModel = require('./models/playlist');
@@ -21,7 +22,7 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
-  store: MongoStore.create({mongoUrl: "mongodb+srv://user:DQl4VhVGwmXTH2zK@swe432.hafol.mongodb.net/"}),
+  store: MongoStore.create({mongoUrl: mongoURI}),
   cookie: { secure: true }
 }));
 
