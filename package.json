@@ -1,24 +1,29 @@
 {
+  "dependencies": {
+    "connect-mongo": "^5.1.0",
+    "cookie-parser": "^1.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "mongodb": "^6.11.0",
+    "mongoose": "^8.8.2",
+    "swe432": "file:"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
   "name": "swe432",
   "version": "1.0.0",
-  "description": "",
-  "main": "mainScript.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JoshuaJ18/swe432.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JoshuaJ18/swe432/issues"
   },
   "homepage": "https://github.com/JoshuaJ18/swe432#readme",
-  "dependencies": {
-    "express": "^4.21.1",
-    "swe432": "file:"
-  }
+  "description": ""
 }
